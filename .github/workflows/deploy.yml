@@ -12,10 +12,6 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress:
-
-concurrency:
-  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -33,7 +29,7 @@ jobs:
         run: npm install
 
       - name: Build Slidev
-        run: npx slidev build taiwan-birthrate-2026.md --base /${{ github.event.repository.name }}/
+        run: npx slidev build slides.md --base /${{ github.event.repository.name }}/
 
       - uses: actions/upload-pages-artifact@v3
         with:
